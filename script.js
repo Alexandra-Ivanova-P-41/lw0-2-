@@ -15,11 +15,23 @@ function checkCalcString(string) {
       return false;
     }
   }
-  return true;
+  try {
+    eval(string);
+    return true;
+  } catch (ex) {
+    return false;
+  }
 }
 
 function isSymbol(symbol) {
-  if (symbol !== "+" && symbol !== "-" && symbol !== "/" && symbol !== "*" && symbol !== "(" && symbol !== ")") {
+  if (
+    symbol !== "+" &&
+    symbol !== "-" &&
+    symbol !== "/" &&
+    symbol !== "*" &&
+    symbol !== "(" &&
+    symbol !== ")"
+  ) {
     return false;
   }
   return true;
